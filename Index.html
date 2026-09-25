@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#080304" />
+
+  <title>Happiest Birthday Sowmya ♡</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #080304;
+      color: #fff;
+      overflow-x: hidden;
+      font-family: "Cormorant Garamond", serif;
+    }
+
+    /* =========================
+       PAGE 1 — HERO
+    ========================= */
+
+    .hero {
+      min-height: 100svh;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background:
+        radial-gradient(
+          circle at 50% 40%,
+          rgba(115, 24, 42, 0.38),
+          transparent 35%
+        ),
+        radial-gradient(
+          circle at 85% 80%,
+          rgba(183, 83, 47, 0.16),
+          transparent 30%
+        ),
+        linear-gradient(
+          135deg,
+          #040203 0%,
+          #180608 48%,
+          #070203 100%
+        );
+    }
+
+    /* Cinematic glow */
+
+    .hero::before {
+      content: "";
+      position: absolute;
+
+      width: 75vw;
+      height: 75vw;
+
+      max-width: 700px;
+      max-height: 700px;
+
+      border-radius: 50%;
+
+      background: rgba(255, 93, 69, 0.08);
+
+      filter: blur(110px);
+
+      left: 50%;
+      top: 40%;
+
+      transform: translate(-50%, -50%);
+
+      pointer-events: none;
+    }
+
+    /* =========================
+       GLOWING PARTICLES
+    ========================= */
+
+    .particles {
+      position: absolute;
+      inset: 0;
+
+      pointer-events: none;
+    }
+
+    .particle {
+      position: absolute;
+
+      width: 4px;
+      height: 4px;
+
+      border-radius: 50%;
+
+      background: #ffd4b4;
+
+      box-shadow:
+        0 0 7px #ffb47f,
+        0 0 18px rgba(255, 126, 82, 0.7);
+
+      animation: particleFloat 5s infinite ease-in-out;
+    }
+
+    @keyframes particleFloat {
+      0%,
+      100% {
+        opacity: 0.2;
+        transform: translateY(0);
+      }
+
+      50% {
+        opacity: 1;
+        transform: translateY(-25px);
+      }
+    }
+
+    /* =========================
+       ROSE PETALS
+    ========================= */
+
+    .petal {
+      position: absolute;
+
+      width: 10px;
+      height: 16px;
+
+      border-radius: 80% 20% 80% 20%;
+
+      background:
+        linear-gradient(
+          135deg,
+          #c95261,
+          #681827
+        );
+
+      opacity: 0.7;
+
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      from {
+        transform:
+          translateY(-15vh)
+          rotate(0deg);
+      }
+
+      to {
+        transform:
+          translateY(120vh)
+          rotate(360deg);
+      }
+    }
+
+    /* =========================
+       MAIN CONTENT
+    ========================= */
+
+    .content {
+      position: relative;
+      z-index: 10;
+
+      width: 100%;
+      max-width: 650px;
+
+      padding: 30px 22px;
+
+      text-align: center;
+
+      animation: pageReveal 1.5s ease forwards;
+    }
+
+    @keyframes pageReveal {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* =========================
+       TOP ORNAMENT
+    ========================= */
+
+    .ornament {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      gap: 18px;
+
+      margin-bottom: 30px;
+    }
+
+    .ornament-line {
+      width: 70px;
+      height: 1px;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          #d8a080,
+          transparent
+        );
+    }
+
+    .ornament-heart {
+      font-size: 27px;
+
+      color: #ffc5a5;
+
+      text-shadow:
+        0 0 15px rgba(255, 138, 100, 0.7);
+    }
+
+    /* =========================
+       TITLE
+    ========================= */
+
+    .happiest {
+      font-size: clamp(25px, 7vw, 48px);
+
+      letter-spacing: 7px;
+
+      font-weight: 500;
+
+      color: #f9e4d2;
+    }
+
+    .birthday {
+      margin-top: -5px;
+
+      font-size: clamp(58px, 17vw, 105px);
+
+      line-height: 0.9;
+
+      font-weight: 600;
+
+      letter-spacing: -2px;
+
+      background:
+        linear-gradient(
+          180deg,
+          #fff4e8 0%,
+          #f7b18b 55%,
+          #d7685c 100%
+        );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+
+      color: transparent;
+
+      text-shadow:
+        0 0 30px rgba(255, 100, 70, 0.18);
+    }
+
+    /* =========================
+       SISTER TEXT
+    ========================= */
+
+    .sister {
+      margin-top: 35px;
+
+      font-size: clamp(18px, 5vw, 31px);
+
+      letter-spacing: 8px;
+
+      color: #f5e0cf;
+    }
+
+    /* =========================
+       NAME
+    ========================= */
+
+    .name-line {
+      width: 95px;
+      height: 1px;
+
+      margin: 23px auto 16px;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          #d89a76,
+          transparent
+        );
+    }
+
+    .name {
+      font-family: "Great Vibes", cursive;
+
+      font-size: clamp(58px, 17vw, 105px);
+
+      color: #ffc1a2;
+
+      line-height: 1;
+
+      text-shadow:
+        0 0 12px rgba(255, 120, 90, 0.45),
+        0 0 35px rgba(255, 100, 70, 0.18);
+    }
+
+    .name-heart {
+      font-family: serif;
+
+      font-size: 30px;
+
+      color: #ffb495;
+    }
+
+    /* =========================
+       SURPRISE BUTTON
+    ========================= */
+
+    .surprise-btn {
+      margin: 55px auto 0;
+
+      width: min(92vw, 440px);
+
+      min-height: 68px;
+
+      padding: 10px 14px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      gap: 14px;
+
+      border-radius: 50px;
+
+      border: 1px solid rgba(255, 190, 165, 0.65);
+
+      color: #fff0e6;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(89, 26, 34, 0.75),
+          rgba(30, 7, 12, 0.85)
+        );
+
+      backdrop-filter: blur(18px);
+
+      box-shadow:
+        0 0 30px rgba(255, 105, 75, 0.12),
+        inset 0 0 20px rgba(255, 190, 160, 0.04);
+
+      font-family: "Cormorant Garamond", serif;
+
+      font-size: 20px;
+
+      letter-spacing: 1px;
+
+      cursor: pointer;
+
+      transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+    }
+
+    .surprise-btn:hover {
+      transform: translateY(-4px);
+
+      box-shadow:
+        0 0 40px rgba(255, 105, 75, 0.3),
+        inset 0 0 25px rgba(255, 190, 160, 0.08);
+    }
+
+    .surprise-btn:active {
+      transform: scale(0.97);
+    }
+
+    .gift {
+      font-size: 23px;
+    }
+
+    .arrow {
+      width: 40px;
+      height: 40px;
+
+      border-radius: 50%;
+
+      border: 1px solid rgba(255, 190, 165, 0.5);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 22px;
+    }
+
+    /* =========================
+       BOTTOM SCROLL
+    ========================= */
+
+    .scroll-indicator {
+      position: absolute;
+
+      bottom: 22px;
+      left: 50%;
+
+      z-index: 10;
+
+      transform: translateX(-50%);
+
+      font-size: 27px;
+
+      color: #e8d5c8;
+
+      animation: scrollBounce 1.8s infinite;
+    }
+
+    @keyframes scrollBounce {
+      0%,
+      100% {
+        transform: translate(-50%, 0);
+      }
+
+      50% {
+        transform: translate(-50%, 9px);
+      }
+    }
+
+    /* =========================
+       TEMP PAGE 2
+       (Will replace later)
+    ========================= */
+
+    #page2 {
+      min-height: 100svh;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+
+      padding: 30px;
+
+      background:
+        radial-gradient(
+          circle at center,
+          #45101a,
+          #090203 70%
+        );
+    }
+
+    #page2 h2 {
+      font-size: clamp(38px, 10vw, 70px);
+
+      color: #ffe0cf;
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 500px) {
+
+      .content {
+        padding-left: 17px;
+        padding-right: 17px;
+      }
+
+      .ornament-line {
+        width: 45px;
+      }
+
+      .happiest {
+        letter-spacing: 4px;
+      }
+
+      .sister {
+        letter-spacing: 5px;
+        margin-top: 28px;
+      }
+
+      .surprise-btn {
+        min-height: 64px;
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       PAGE 1
+  ========================= -->
+
+  <section class="hero">
+
+    <!-- Particles -->
+    <div class="particles">
+
+      <span class="particle"
+        style="left:10%;top:18%;animation-delay:0s"></span>
+
+      <span class="particle"
+        style="left:82%;top:16%;animation-delay:1s"></span>
+
+      <span class="particle"
+        style="left:70%;top:35%;animation-delay:2s"></span>
+
+      <span class="particle"
+        style="left:24%;top:60%;animation-delay:3s"></span>
+
+      <span class="particle"
+        style="left:90%;top:67%;animation-delay:1.5s"></span>
+
+      <span class="particle"
+        style="left:46%;top:12%;animation-delay:2.5s"></span>
+
+      <span class="particle"
+        style="left:58%;top:78%;animation-delay:4s"></span>
+
+    </div>
+
+    <!-- Petals -->
+
+    <span class="petal"
+      style="left:7%;animation-duration:9s;animation-delay:0s"></span>
+
+    <span class="petal"
+      style="left:21%;animation-duration:12s;animation-delay:2s"></span>
+
+    <span class="petal"
+      style="left:40%;animation-duration:10s;animation-delay:5s"></span>
+
+    <span class="petal"
+      style="left:64%;animation-duration:13s;animation-delay:1s"></span>
+
+    <span class="petal"
+      style="left:82%;animation-duration:11s;animation-delay:4s"></span>
+
+    <span class="petal"
+      style="left:94%;animation-duration:14s;animation-delay:3s"></span>
+
+
+    <!-- Main Content -->
+
+    <div class="content">
+
+      <div class="ornament">
+
+        <span class="ornament-line"></span>
+
+        <span class="ornament-heart">♡</span>
+
+        <span class="ornament-line"></span>
+
+      </div>
+
+
+      <div class="happiest">
+        HAPPIEST
+      </div>
+
+
+      <div class="birthday">
+        BIRTHDAY
+      </div>
+
+
+      <div class="sister">
+        MY DEAR SISTER
+      </div>
+
+
+      <div class="name-line"></div>
+
+
+      <div class="name">
+        Sowmya
+        <span class="name-heart">♡</span>
+      </div>
+
+
+      <button
+        class="surprise-btn"
+        onclick="openSurprise()"
+      >
+
+        <span class="gift">
+          🎁
+        </span>
+
+        <span>
+          A Little Surprise For You
+        </span>
+
+        <span class="arrow">
+          →
+        </span>
+
+      </button>
+
+    </div>
+
+
+    <div class="scroll-indicator">
+      ⌄
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       PAGE 2 TEMPORARY
+       We will replace this later.
+  ========================= -->
+
+  <section id="page2">
+
+    <h2>
+      Your Surprise Awaits ✨
+    </h2>
+
+  </section>
+
+
+  <script>
+
+    function openSurprise() {
+
+      document
+        .getElementById("page2")
+        .scrollIntoView({
+          behavior: "smooth"
+        });
+
+    }
+
+  </script>
+
+</body>
+</html>
